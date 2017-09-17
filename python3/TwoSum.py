@@ -13,13 +13,16 @@ class Solution(object):
     def twoSum2(self, nums, target):
         for ind1, val in enumerate(nums):
             if target - val in nums:
-                return [ind1, nums.index(target - val)]
+                ind2 = nums.index(target - val)
+                if ind1 != ind2:
+                    return [ind1, nums.index(target - val)]
 
     def twoSum3(self, nums, target):
         for ind1, val in enumerate(nums):
             try:
                 ind2 = nums.index(target - val)
-                return [ind1, ind2]
+                if ind1 != ind2:
+                    return [ind1, ind2]
             except Exception:
                 continue
 
@@ -35,7 +38,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    nums = [2, 7, 11, 15]
-    target = 18
+    nums = [3, 2, 4]
+    target = 6
     s = Solution()
-    print(s.twoSum4(nums, target))
+    print(s.twoSum3(nums, target))
