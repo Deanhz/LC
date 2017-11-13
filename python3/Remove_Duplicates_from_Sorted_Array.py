@@ -56,5 +56,6 @@ if __name__ == "__main__":
     print(t)
 
 #总结
-#del()函数，会直接改变原来的数据，所以在for循环的头部和循环体都有同一List，往往会出错误。
-#for index,char in enumerate(nums) 的index是一直都在递增的，如果在循环体中改变了nums，那么char就受到影响了。
+#del()函数，会直接改变原来的数据。
+#for index,char in enumerate(nums) 的index是一直都在递增的，如果在循环体中改变了nums，那么enumerate(nums)会变化。
+#for i in range(len(nums))，内部改变了nums，头部没有影响，应为range(len(nums))在第一次生成一个固定的list。
